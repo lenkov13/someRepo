@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REECA & Slavic Studies — Resource Directory</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --cream: #ede7d9;
+    --rust: #b84a2e;
+    --gold: #c8902a;
+    --forest: #2d4a3e;
+    --slate: #4a5568;
+    --muted: #7a6f63;
+    --border: #d4c9b8;
+    --accent-light: #f0e8d8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(255,255,255,0.03) 28px,
+      rgba(255,255,255,0.03) 29px
+    );
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .header-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: rgba(245,240,232,0.65);
+    max-width: 560px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 14px 16px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  nav a:hover {
+    color: var(--rust);
+    border-bottom-color: var(--rust);
+  }
+
+  /* MAIN LAYOUT */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 40px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 64px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .section-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .section-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-left: auto;
+  }
+
+  /* SUBSECTION */
+  .subsection {
+    margin-bottom: 32px;
+  }
+
+  .subsection-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 2px solid var(--rust);
+  }
+
+  /* RESOURCE GRID */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .resource-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 16px 18px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    position: relative;
+  }
+
+  .resource-card:hover {
+    border-color: var(--rust);
+    box-shadow: 3px 3px 0 var(--rust);
+    transform: translate(-1px, -1px);
+  }
+
+  .resource-card.featured {
+    border-left: 3px solid var(--gold);
+    background: #fffdf7;
+  }
+
+  .resource-card.featured::before {
+    content: '★';
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    color: var(--gold);
+    font-size: 11px;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .card-url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: var(--rust);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .card-url:hover { text-decoration: underline; }
+
+  .card-desc {
+    font-size: 12.5px;
+    color: var(--slate);
+    line-height: 1.55;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .tag-jobs { background: #e8f4e8; color: #2d6a2d; }
+  .tag-phd { background: #e8eef8; color: #2d4080; }
+  .tag-fellowship { background: #fef3e2; color: #8a5500; }
+  .tag-cfp { background: #f8e8f0; color: #7a2060; }
+  .tag-listserv { background: #e8f0f0; color: #205050; }
+  .tag-journal { background: #f0ece8; color: #604030; }
+  .tag-network { background: #ece8f4; color: #402070; }
+  .tag-think-tank { background: #eef0e8; color: #304020; }
+  .tag-ngo { background: #f4e8e8; color: #702020; }
+  .tag-hungary { background: #fce8e0; color: #902020; }
+  .tag-italy { background: #fdf0e0; color: #805010; }
+  .tag-slovakia { background: #e0ecf8; color: #204060; }
+
+  /* COUNTRY BLOCK */
+  .country-block {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+
+  .country-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .country-flag {
+    font-size: 1.4rem;
+  }
+
+  .country-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .country-note {
+    font-style: italic;
+    font-size: 11.5px;
+    color: rgba(245,240,232,0.6);
+    margin-left: auto;
+  }
+
+  .country-content {
+    padding: 20px;
+  }
+
+  /* PRO TIP BOX */
+  .pro-tip {
+    background: var(--forest);
+    color: var(--paper);
+    padding: 20px 24px;
+    margin: 40px 0;
+    border-left: 4px solid var(--gold);
+  }
+
+  .pro-tip-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .pro-tip p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(245,240,232,0.85);
+  }
+
+  .pro-tip strong { color: var(--paper); font-style: italic; }
+
+  /* TABLE for quick ref */
+  .quick-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  .quick-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--border);
+    background: var(--accent-light);
+  }
+
+  .quick-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .quick-table tr:hover td { background: var(--accent-light); }
+
+  .quick-table td:first-child {
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .quick-table td.mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--rust);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    padding: 32px 40px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+
+  footer span { color: var(--gold); }
+
+  /* SEARCH BAR */
+  .search-wrap {
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  #search {
+    width: 100%;
+    padding: 14px 20px 14px 44px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    border: 2px solid var(--border);
+    background: white;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #search:focus { border-color: var(--rust); }
+  #search::placeholder { color: var(--muted); }
+
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 15px;
+    pointer-events: none;
+  }
+
+  #search-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .hidden { display: none !important; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    header { padding: 40px 20px 36px; }
+    main { padding: 32px 20px 60px; }
+    .nav-inner { padding: 0 20px; }
+    .resource-grid { grid-template-columns: 1fr; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-label">Academic Resource Directory · Compiled 2025</div>
+    <h1>REECA & Slavic Studies<br>Opportunity Index</h1>
+    <p class="header-sub">A comprehensive, curated directory of jobs, fellowships, PhD programs, conferences, forums, and niche organizations for scholars of Russia, Eastern Europe, and Eurasia — with a deep focus on Europe.</p>
+    <div class="header-meta">
+      <span class="meta-pill">Jobs & Positions</span>
+      <span class="meta-pill">PhD Programs</span>
+      <span class="meta-pill">Fellowships & Grants</span>
+      <span class="meta-pill">CFPs & Conferences</span>
+      <span class="meta-pill">Forums & Listservs</span>
+      <span class="meta-pill">Niche NGOs</span>
+      <span class="meta-pill">Hungary · Italy · Slovakia</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#jobs">Jobs</a>
+    <a href="#phd">PhD</a>
+    <a href="#fellowships">Fellowships</a>
+    <a href="#cfp">CFPs</a>
+    <a href="#forums">Forums</a>
+    <a href="#niche">Niche Orgs</a>
+    <a href="#hungary">Hungary</a>
+    <a href="#italy">Italy</a>
+    <a href="#slovakia">Slovakia</a>
+    <a href="#crossregion">Cross-Regional</a>
+  </div>
+</nav>
+
+<main>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search organizations, topics, countries..." oninput="filterCards()">
+    <div id="search-count"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ JOBS ═══ -->
+  <section class="section" id="jobs">
+    <div class="section-header">
+      <span class="section-icon">💼</span>
+      <h2 class="section-title">Jobs & Positions</h2>
+      <span class="section-count">Primary Job Boards + Think Tanks + Regional</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Primary Job Boards</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="jobs h-net slavic eastern europe">
+          <div class="card-name">H-Net Job Guide</div>
+          <a class="card-url" href="https://networks.h-net.org/jobs" target="_blank">networks.h-net.org/jobs</a>
+          <p class="card-desc">The most targeted source — filter by field. Has dedicated Slavic/REECA postings. Monitor daily.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card featured" data-search="jobs aseees careers slavic eurasian eastern europe">
+          <div class="card-name">ASEEES Career Center</div>
+          <a class="card-url" href="https://aseees.org/careers" target="_blank">aseees.org/careers</a>
+          <p class="card-desc">Most targeted board for your exact niche. Essential for any REECA scholar.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="jobs chronicle higher education academic">
+          <div class="card-name">Chronicle of Higher Education</div>
+          <a class="card-url" href="https://chronicle.com/jobs" target="_blank">chronicle.com/jobs</a>
+          <p class="card-desc">Broadest academic job board in North America. Strong tenure-track coverage.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="jobs inside higher ed alt-ac admin">
+          <div class="card-name">Inside Higher Ed</div>
+          <a class="card-url" href="https://insidehighered.com/jobs" target="_blank">insidehighered.com/jobs</a>
+          <p class="card-desc">Strong alt-ac and administrative postings in addition to faculty positions.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="jobs academic positions europe european">
+          <div class="card-name">AcademicPositions.eu</div>
+          <a class="card-url" href="https://academicpositions.eu" target="_blank">academicpositions.eu</a>
+          <p class="card-desc">Best aggregator for European academic job postings. Essential if you're targeting EU institutions.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="jobs times higher education uk international">
+          <div class="card-name">Times Higher Education</div>
+          <a class="card-url" href="https://timeshighereducation.com/unijobs" target="_blank">timeshighereducation.com/unijobs</a>
+          <p class="card-desc">Strong UK and international coverage.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="jobs euroacademia europe">
+          <div class="card-name">EuroAcademia</div>
+          <a class="card-url" href="https://euroacademia.eu" target="_blank">euroacademia.eu</a>
+          <p class="card-desc">EU-focused academic jobs; often has positions at Eastern European universities.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="jobs higheredjobs university aggregator">
+          <div class="card-name">HigherEdJobs</div>
+          <a class="card-url" href="https://higheredjobs.com" target="_blank">higheredjobs.com</a>
+          <p class="card-desc">Aggregates many university HR pages in one place.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Think Tanks & Research Institutes</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="think tank kennan wilson center russia eurasia jobs">
+          <div class="card-name">Kennan Institute (Wilson Center)</div>
+          <a class="card-url" href="https://wilsoncenter.org/careers" target="_blank">wilsoncenter.org/careers</a>
+          <p class="card-desc">Leading US institute for Russia/Eurasia studies. Also offers Short-Term Grants for scholars.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="ponars eurasia policy research network">
+          <div class="card-name">PONARS Eurasia</div>
+          <a class="card-url" href="https://ponarseurasia.org" target="_blank">ponarseurasia.org</a>
+          <p class="card-desc">Policy-oriented research network. Good for connecting policy with scholarship.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span></div>
+        </div>
+        <div class="resource-card" data-search="carnegie endowment international affairs jobs">
+          <div class="card-name">Carnegie Endowment</div>
+          <a class="card-url" href="https://carnegieendowment.org/about/careers" target="_blank">carnegieendowment.org/about/careers</a>
+          <p class="card-desc">International affairs think tank. Russia and Eurasia program is active.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="chatham house UK russia eastern europe desk jobs">
+          <div class="card-name">Chatham House</div>
+          <a class="card-url" href="https://chathamhouse.org/about-us/work-us" target="_blank">chathamhouse.org/about-us/work-us</a>
+          <p class="card-desc">UK-based; strong Russia/E. Europe desk. One of the most influential European think tanks.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="CEPA center european policy analysis jobs">
+          <div class="card-name">CEPA</div>
+          <a class="card-url" href="https://cepa.org/about/jobs" target="_blank">cepa.org/about/jobs</a>
+          <p class="card-desc">Center for European Policy Analysis — transatlantic focus, active on Eastern European affairs.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="ECFR european council foreign relations jobs">
+          <div class="card-name">ECFR</div>
+          <a class="card-url" href="https://ecfr.eu/jobs" target="_blank">ecfr.eu/jobs</a>
+          <p class="card-desc">European Council on Foreign Relations. Pan-European offices, CEE coverage strong.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card featured" data-search="OSW centre eastern studies Warsaw Poland russia">
+          <div class="card-name">OSW (Centre for Eastern Studies)</div>
+          <a class="card-url" href="https://osw.waw.pl" target="_blank">osw.waw.pl</a>
+          <p class="card-desc">Polish institute; among the best in Europe for Russia/Eastern Europe analysis. Their publications are essential reading.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span></div>
+        </div>
+        <div class="resource-card" data-search="Riddle Russia analytical outlet jobs">
+          <div class="card-name">Riddle Russia</div>
+          <a class="card-url" href="https://ridl.io" target="_blank">ridl.io</a>
+          <p class="card-desc">Analytical outlet on Russian politics and society. Occasionally hires contributors.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span></div>
+        </div>
+        <div class="resource-card" data-search="CSIS russia eurasia program jobs washington">
+          <div class="card-name">CSIS</div>
+          <a class="card-url" href="https://csis.org/careers" target="_blank">csis.org/careers</a>
+          <p class="card-desc">Center for Strategic and International Studies — Russia & Eurasia program.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="IISS international institute strategic studies jobs">
+          <div class="card-name">IISS</div>
+          <a class="card-url" href="https://iiss.org/about/work-with-us" target="_blank">iiss.org/about/work-with-us</a>
+          <p class="card-desc">International Institute for Strategic Studies. London-based, global coverage.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Eastern European & Regional Institutions</div>
+      <div class="resource-grid">
+        <div class="resource-card" data-search="NEC new europe college bucharest fellowship">
+          <div class="card-name">NEC (New Europe College)</div>
+          <a class="card-url" href="https://nec.ro" target="_blank">nec.ro</a>
+          <p class="card-desc">Bucharest-based; fellowship programs and academic events. Excellent for humanities in SE Europe context.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="CEU central european university vienna jobs">
+          <div class="card-name">CEU (Central European University)</div>
+          <a class="card-url" href="https://jobs.ceu.edu" target="_blank">jobs.ceu.edu</a>
+          <p class="card-desc">Now Vienna-based. Strong postdoc and research positions across humanities and social sciences.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="SSEES UCL london slavic east european jobs">
+          <div class="card-name">UCL SSEES</div>
+          <a class="card-url" href="https://ucl.ac.uk/ssees" target="_blank">ucl.ac.uk/ssees</a>
+          <p class="card-desc">School of Slavonic and East European Studies at UCL — top in Europe for the field. Regular job and PhD postings.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="Herder institute Marburg german eastern europe">
+          <div class="card-name">Herder Institute (Marburg)</div>
+          <a class="card-url" href="https://herder-institut.de" target="_blank">herder-institut.de</a>
+          <p class="card-desc">German research institute; strong focus on Eastern European cultural history.</p>
+          <div class="card-tags"><span class="tag tag-jobs">Jobs</span></div>
+        </div>
+        <div class="resource-card" data-search="DGO deutsche gesellschaft osteuropakunde german">
+          <div class="card-name">DGO (Deutsche Gesellschaft für Osteuropakunde)</div>
+          <a class="card-url" href="https://dgo-online.org" target="_blank">dgo-online.org</a>
+          <p class="card-desc">German Society for Eastern European Studies. Publishes Osteuropa journal. Key German-language network.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PHD ═══ -->
+  <section class="section" id="phd">
+    <div class="section-header">
+      <span class="section-icon">🎓</span>
+      <h2 class="section-title">PhD Programs</h2>
+      <span class="section-count">North America · UK · Europe</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">North America — Core Programs</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="phd columbia harriman russia eurasian">
+          <div class="card-name">Columbia — Harriman Institute</div>
+          <a class="card-url" href="https://harriman.columbia.edu" target="_blank">harriman.columbia.edu</a>
+          <p class="card-desc">One of the top US programs. Strong literature, history, and policy tracks.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd harvard davis center russian eurasian">
+          <div class="card-name">Harvard — Davis Center</div>
+          <a class="card-url" href="https://daviscenter.fas.harvard.edu" target="_blank">daviscenter.fas.harvard.edu</a>
+          <p class="card-desc">Your M.A. home institution's PhD-level partner. Strong alumni network.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd georgetown CERES eurasian east european">
+          <div class="card-name">Georgetown — CERES</div>
+          <a class="card-url" href="https://ceres.georgetown.edu" target="_blank">ceres.georgetown.edu</a>
+          <p class="card-desc">Center for Eurasian, Russian, and East European Studies.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd stanford CREEES russian east european">
+          <div class="card-name">Stanford — CREEES</div>
+          <a class="card-url" href="https://creees.stanford.edu" target="_blank">creees.stanford.edu</a>
+          <p class="card-desc">Center for Russian, East European & Eurasian Studies.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd NYU jordan center russia">
+          <div class="card-name">NYU — Jordan Center</div>
+          <a class="card-url" href="https://jordanrussiacenter.org" target="_blank">jordanrussiacenter.org</a>
+          <p class="card-desc">Strong on Russia and the arts, cultural studies dimension.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd illinois urbana slavic literature">
+          <div class="card-name">U of Illinois Urbana-Champaign — REEI</div>
+          <a class="card-url" href="https://reei.illinois.edu" target="_blank">reei.illinois.edu</a>
+          <p class="card-desc">Strong Slavic literature program. Also has the largest Slavic library west of DC.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd michigan CREES east european">
+          <div class="card-name">Michigan — CREES</div>
+          <a class="card-url" href="https://ii.umich.edu/crees" target="_blank">ii.umich.edu/crees</a>
+          <p class="card-desc">Center for Russian and East European Studies.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd pittsburgh REEEC east european">
+          <div class="card-name">Pittsburgh — REEEC</div>
+          <a class="card-url" href="https://ucis.pitt.edu/reeec" target="_blank">ucis.pitt.edu/reeec</a>
+          <p class="card-desc">Russian East European and Eurasian Center. Also excellent for funding resources.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">United Kingdom & Ireland</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="phd UCL SSEES slavic east european london">
+          <div class="card-name">UCL SSEES</div>
+          <a class="card-url" href="https://ucl.ac.uk/ssees" target="_blank">ucl.ac.uk/ssees</a>
+          <p class="card-desc">Top in Europe for Slavic/REECA. Strong literature and culture tracks.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd oxford russian east european">
+          <div class="card-name">Oxford — Russian & East European Studies</div>
+          <a class="card-url" href="https://area.ox.ac.uk" target="_blank">area.ox.ac.uk</a>
+          <p class="card-desc">Area Studies program with a strong REECA component.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd cambridge slavic east european">
+          <div class="card-name">Cambridge — SREES</div>
+          <a class="card-url" href="https://spol.cam.ac.uk/srees" target="_blank">spol.cam.ac.uk/srees</a>
+          <p class="card-desc">Slavonic and East European Studies at Cambridge.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd St Andrews modern languages russian">
+          <div class="card-name">St Andrews — Modern Languages</div>
+          <a class="card-url" href="https://st-andrews.ac.uk" target="_blank">st-andrews.ac.uk</a>
+          <p class="card-desc">Strong Russian language and literature program within Modern Languages. Leverhulme fellowships available.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Europe — Continental</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="phd helsinki aleksanteri institute finland russia">
+          <div class="card-name">University of Helsinki — Aleksanteri Institute</div>
+          <a class="card-url" href="https://helsinki.fi/aleksanteri" target="_blank">helsinki.fi/aleksanteri</a>
+          <p class="card-desc">One of the best Russian and East European studies institutes in Europe. Underused by American scholars.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd CEU vienna central european university">
+          <div class="card-name">CEU Vienna — PhD Programs</div>
+          <a class="card-url" href="https://ceu.edu/admissions/phd" target="_blank">ceu.edu/admissions/phd</a>
+          <p class="card-desc">Strong social sciences and humanities. English-language. Very internationally diverse.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd FU Berlin free university osteuropainstitut east european">
+          <div class="card-name">FU Berlin — Osteuropainstitut</div>
+          <a class="card-url" href="https://fu-berlin.de" target="_blank">fu-berlin.de</a>
+          <p class="card-desc">Berlin's Eastern European Studies hub. Strong on Russian culture and politics.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd tartu estonia slavic russian baltic">
+          <div class="card-name">University of Tartu</div>
+          <a class="card-url" href="https://ut.ee" target="_blank">ut.ee</a>
+          <p class="card-desc">Strong Baltic/Russian studies. English-language PhD programs. Geographically well-positioned.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd Uppsala sweden slavic studies">
+          <div class="card-name">Uppsala University</div>
+          <a class="card-url" href="https://uu.se" target="_blank">uu.se</a>
+          <p class="card-desc">Strong Slavic studies tradition in Sweden. Good for Nordic funding eligibility.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd sciences Po paris international france russia">
+          <div class="card-name">Sciences Po Paris — CERI</div>
+          <a class="card-url" href="https://sciencespo.fr" target="_blank">sciencespo.fr</a>
+          <p class="card-desc">Centre de Recherches Internationales. Strong policy-oriented CEE/Russia research.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+        <div class="resource-card" data-search="phd jagiellonian krakow poland slavic polish">
+          <div class="card-name">Jagiellonian University (Kraków)</div>
+          <a class="card-url" href="https://uj.edu.pl" target="_blank">uj.edu.pl</a>
+          <p class="card-desc">Polish perspective on the region. Good for Polish-Russian comparative work.</p>
+          <div class="card-tags"><span class="tag tag-phd">PhD</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FELLOWSHIPS ════════ -->
+  <section class="section" id="fellowships">
+    <div class="section-header">
+      <span class="section-icon">🏆</span>
+      <h2 class="section-title">Fellowships, Grants & Competitions</h2>
+      <span class="section-count">US Gov · Private · European · Field-Specific</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">US Government-Linked</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="title VIII state department REECA fellowship grant">
+          <div class="card-name">Title VIII Programs</div>
+          <a class="card-url" href="https://state.gov/title-viii" target="_blank">state.gov/title-viii</a>
+          <p class="card-desc">Umbrella for multiple REECA fellowships funded by the State Department. Essential first stop.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="fulbright scholar student program fellowship">
+          <div class="card-name">Fulbright U.S. Scholar / Student</div>
+          <a class="card-url" href="https://cies.org" target="_blank">cies.org</a>
+          <p class="card-desc">Faculty/researcher grants (Scholar) and student grants (fulbrightonline.org). Broad geographic coverage.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="IREX eastern europe eurasia research exchange">
+          <div class="card-name">IREX</div>
+          <a class="card-url" href="https://irex.org/apply" target="_blank">irex.org/apply</a>
+          <p class="card-desc">Multiple programs for E. Europe & Eurasia. Individual Advanced Research Opportunities (IARO) are particularly useful.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="NCEEER national council eurasian east european research">
+          <div class="card-name">NCEEER</div>
+          <a class="card-url" href="https://nceeer.org" target="_blank">nceeer.org</a>
+          <p class="card-desc">National Council for Eurasian & East European Research. Largest provider of postdoctoral research resources for US scholars.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="american councils ACTR ACCELS language grant">
+          <div class="card-name">American Councils (ACTR/ACCELS)</div>
+          <a class="card-url" href="https://americancouncils.org" target="_blank">americancouncils.org</a>
+          <p class="card-desc">Language and research grants for Eurasia. Title VIII Combined Research & Language Training program.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Major Private Funders</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="ACLS american council learned societies humanities fellowship">
+          <div class="card-name">ACLS</div>
+          <a class="card-url" href="https://acls.org/programs" target="_blank">acls.org/programs</a>
+          <p class="card-desc">American Council of Learned Societies. Multiple humanities fellowship programs including Southeast European focus. Also runs SISECSE residency.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="SSRC social science research council fellowship REECA">
+          <div class="card-name">SSRC</div>
+          <a class="card-url" href="https://ssrc.org/fellowships" target="_blank">ssrc.org/fellowships</a>
+          <p class="card-desc">Social Science Research Council — strong REECA programs. Postdoctoral grants up to $20,000.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="mellon foundation humanities fellowship grant">
+          <div class="card-name">Mellon Foundation</div>
+          <a class="card-url" href="https://mellon.org" target="_blank">mellon.org</a>
+          <p class="card-desc">Major humanities funder. ACLS/Mellon dissertation fellowships very competitive but valuable.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="NEH national endowment humanities grant US citizens">
+          <div class="card-name">NEH</div>
+          <a class="card-url" href="https://neh.gov/grants" target="_blank">neh.gov/grants</a>
+          <p class="card-desc">National Endowment for the Humanities. US citizens only. Multiple grant categories.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="open society foundations soros grant eastern europe">
+          <div class="card-name">Open Society Foundations</div>
+          <a class="card-url" href="https://opensocietyfoundations.org/grants" target="_blank">opensocietyfoundations.org/grants</a>
+          <p class="card-desc">Soros-founded foundation. Various programs supporting open society, democracy, and scholarship in Eastern Europe.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">European Funders</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="DAAD germany fellowship postdoc research">
+          <div class="card-name">DAAD</div>
+          <a class="card-url" href="https://daad.de/en" target="_blank">daad.de/en</a>
+          <p class="card-desc">German Academic Exchange Service. Research stays, postdoc fellowships, language programs. Very accessible for non-Germans.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="british academy UK fellowship humanities social science">
+          <div class="card-name">British Academy</div>
+          <a class="card-url" href="https://thebritishacademy.ac.uk/funding" target="_blank">thebritishacademy.ac.uk/funding</a>
+          <p class="card-desc">UK-based. Postdoctoral fellowships and research grants for humanities and social sciences.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="Marie Curie EU postdoc mobility fellowship european">
+          <div class="card-name">Marie Skłodowska-Curie Actions</div>
+          <a class="card-url" href="https://ec.europa.eu/research/mariecurieactions" target="_blank">ec.europa.eu/research/mariecurieactions</a>
+          <p class="card-desc">EU postdoc mobility scheme. Requires EU institutional affiliation but excellent funding.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="visegrad fund V4 central europe fellowship grant">
+          <div class="card-name">Visegrad Fund</div>
+          <a class="card-url" href="https://visegradfund.org" target="_blank">visegradfund.org</a>
+          <p class="card-desc">Central European focus. Mobility grants, residencies, and project funding for V4 countries (Poland, Hungary, Czech Republic, Slovakia).</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="gerda henkel stiftung germany history eastern europe">
+          <div class="card-name">Gerda Henkel Stiftung</div>
+          <a class="card-url" href="https://gerda-henkel-stiftung.de" target="_blank">gerda-henkel-stiftung.de</a>
+          <p class="card-desc">German private foundation. Funds historical research including E. Europe. Special "Scholars at Risk" program.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="alexander von humboldt foundation germany postdoc fellowship">
+          <div class="card-name">Alexander von Humboldt Foundation</div>
+          <a class="card-url" href="https://humboldt-foundation.de" target="_blank">humboldt-foundation.de</a>
+          <p class="card-desc">Research fellowships at German universities for 6-24 months. Also runs Philipp Schwartz Initiative for scholars at risk.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Field-Specific & Niche Fellowships</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="kennan institute short-term grant wilson center">
+          <div class="card-name">Kennan Short-Term Grants</div>
+          <a class="card-url" href="https://wilsoncenter.org/kennan" target="_blank">wilsoncenter.org/kennan</a>
+          <p class="card-desc">Very accessible entry-level grants for Russia/Eurasia scholars. Good starting point.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="ASEEES travel grant dissertation research">
+          <div class="card-name">ASEEES Grants & Fellowships</div>
+          <a class="card-url" href="https://aseees.org/grants" target="_blank">aseees.org/grants</a>
+          <p class="card-desc">Dissertation research grants ($6,000), summer writing grants, travel grants, and the Cohen-Tucker Fellowship for Russian Historical Studies.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="nemtsov foundation fellowship prize russia young scholars">
+          <div class="card-name">Boris Nemtsov Foundation</div>
+          <a class="card-url" href="https://nemtsovfund.org" target="_blank">nemtsovfund.org</a>
+          <p class="card-desc">Runs academic prizes and fellowships for young researchers on Russia and Russian politics.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="AISEES southeast european studies fellowship grant">
+          <div class="card-name">AISEES</div>
+          <a class="card-url" href="https://aisees.org" target="_blank">aisees.org</a>
+          <p class="card-desc">American Institute for Southeast European Studies. $3,000 fellowships for grad students and early postdocs (Jan 20 deadline). Undersubscribed — apply.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="ACLS SISECSE summer institute east central europe bulgaria">
+          <div class="card-name">ACLS SISECSE</div>
+          <a class="card-url" href="https://acls.org/programs/summer-institute-east-central-southeastern-europe" target="_blank">acls.org</a>
+          <p class="card-desc">Two-week interdisciplinary residency in Bulgaria for postdoctoral scholars. Running 2026 and 2027. Excellent and low-profile.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="profellow database fellowship search postdoc">
+          <div class="card-name">ProFellow</div>
+          <a class="card-url" href="https://profellow.com" target="_blank">profellow.com</a>
+          <p class="card-desc">Searchable fellowship and PhD funding database. Good for discovering programs you wouldn't otherwise find.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CFP & CONFERENCES ═══ -->
+  <section class="section" id="cfp">
+    <div class="section-header">
+      <span class="section-icon">📢</span>
+      <h2 class="section-title">Calls for Papers & Conferences</h2>
+      <span class="section-count">Field Conferences · CFP Aggregators · Key Journals</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Field Conferences</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="ASEEES annual convention conference CFP slavic">
+          <div class="card-name">ASEEES Annual Convention</div>
+          <a class="card-url" href="https://aseees.org/convention" target="_blank">aseees.org/convention</a>
+          <p class="card-desc">The biggest REECA conference in North America. CFP usually March–April. Essential presence for networking.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span></div>
+        </div>
+        <div class="resource-card featured" data-search="BASEES annual conference UK british slavic eastern european">
+          <div class="card-name">BASEES Annual Conference</div>
+          <a class="card-url" href="https://basees.org" target="_blank">basees.org</a>
+          <p class="card-desc">British equivalent of ASEEES. Held in Cambridge in spring, 400+ participants. Good European networking.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span></div>
+        </div>
+        <div class="resource-card" data-search="ICCEES world congress international slavic eurasian">
+          <div class="card-name">ICCEES World Congress</div>
+          <a class="card-url" href="https://iccees.org" target="_blank">iccees.org</a>
+          <p class="card-desc">Major international congress every 5 years. Broad international participation.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span></div>
+        </div>
+        <div class="resource-card" data-search="AATSEEL american association teachers slavic east european languages">
+          <div class="card-name">AATSEEL</div>
+          <a class="card-url" href="https://aatseel.org" target="_blank">aatseel.org</a>
+          <p class="card-desc">American Association of Teachers of Slavic and E. European Languages. Annual conference; literature and linguistics panels.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">CFP Aggregators</div>
+      <div class="resource-grid">
+        <div class="resource-card" data-search="H-Net announcements CFP humanities conference">
+          <div class="card-name">H-Net Announcements</div>
+          <a class="card-url" href="https://networks.h-net.org/h-announce" target="_blank">networks.h-net.org/h-announce</a>
+          <p class="card-desc">Filter by field. Very high volume but high signal for humanities CFPs.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span></div>
+        </div>
+        <div class="resource-card" data-search="CFP list brown university humanities conference">
+          <div class="card-name">CFP List (Brown University)</div>
+          <a class="card-url" href="https://cfplist.com" target="_blank">cfplist.com</a>
+          <p class="card-desc">Humanities-focused CFP aggregator. Searchable by keyword and date.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span></div>
+        </div>
+        <div class="resource-card" data-search="eurozine funding opportunities humanities european cultural journals">
+          <div class="card-name">Eurozine Funding Opportunities</div>
+          <a class="card-url" href="https://eurozine.com/eurozine-funding-opportunities-outlook" target="_blank">eurozine.com</a>
+          <p class="card-desc">One of the best aggregators of niche European humanities grants, CFPs, and translation funding. Check regularly.</p>
+          <div class="card-tags"><span class="tag tag-cfp">CFP</span><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Key Journals (also post CFPs)</div>
+      <div class="resource-grid">
+        <div class="resource-card" data-search="slavic review journal ASEEES literature history">
+          <div class="card-name">Slavic Review</div>
+          <a class="card-url" href="https://slavicreview.org" target="_blank">slavicreview.org</a>
+          <p class="card-desc">ASEEES flagship journal. Spans all disciplines, past and present. On JSTOR.</p>
+          <div class="card-tags"><span class="tag tag-journal">Journal</span></div>
+        </div>
+        <div class="resource-card featured" data-search="Ab Imperio empire nationalism post-Soviet theory journal">
+          <div class="card-name">Ab Imperio</div>
+          <a class="card-url" href="https://abimperio.net" target="_blank">abimperio.net</a>
+          <p class="card-desc">Theory of empire and nationalism in post-Soviet space. The editorial network is itself a significant scholarly community. Essential for theoretical/conceptual work.</p>
+          <div class="card-tags"><span class="tag tag-journal">Journal</span></div>
+        </div>
+        <div class="resource-card" data-search="Kritika journal russian history culture">
+          <div class="card-name">Kritika</div>
+          <a class="card-url" href="https://kritika.press" target="_blank">kritika.press</a>
+          <p class="card-desc">Explorations in Russian and Eurasian History. Rigorous, peer-reviewed.</p>
+          <div class="card-tags"><span class="tag tag-journal">Journal</span></div>
+        </div>
+        <div class="resource-card" data-search="East European Politics Societies journal culture">
+          <div class="card-name">East European Politics & Societies</div>
+          <a class="card-url" href="https://journals.sagepub.com/home/eep" target="_blank">journals.sagepub.com/home/eep</a>
+          <p class="card-desc">Interdisciplinary. Strong on post-communist transitions, cultural politics.</p>
+          <div class="card-tags"><span class="tag tag-journal">Journal</span></div>
+        </div>
+        <div class="resource-card" data-search="Laboratorium russian sociology social science open access">
+          <div class="card-name">Laboratorium</div>
+          <a class="card-url" href="https://soclabo.org" target="_blank">soclabo.org</a>
+          <p class="card-desc">Russian sociology and social science. Open access. The editors-in-chief network is very active.</p>
+          <div class="card-tags"><span class="tag tag-journal">Journal</span></div>
+        </div>
+        <div class="resource-card" data-search="NLO novoe literaturnoe obozrenie russian literary journal">
+          <div class="card-name">NLO (Новое Литературное Обозрение)</div>
+          <a class="card-url" href="https://nlobooks.ru" target="_blank">nlobooks.ru</a>
+          <p class="card-desc">Russia's most prestigious literary-academic journal. Editorial board is a who's who of the field. In Russian.</p>
+          <div class="card-tags"><span class="tag tag-journal">Journal</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FORUMS & LISTSERVS ═══ -->
+  <section class="section" id="forums">
+    <div class="section-header">
+      <span class="section-icon">💬</span>
+      <h2 class="section-title">Forums, Listservs & Communities</h2>
+      <span class="section-count">Email Lists · Online Communities · Social Media</span>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-label">Top Priority</div>
+      <p>Subscribe to <strong>H-Russia</strong>, <strong>SEELANGS</strong>, and <strong>ASEEES Listserv</strong> immediately. These three together surface probably 70% of what you need. ASEEES membership (~$50/year early career) is required for the latter — worth every cent.</p>
+    </div>
+
+    <div class="resource-grid">
+      <div class="resource-card featured" data-search="H-Russia listserv jobs CFP announcements">
+        <div class="card-name">H-Russia</div>
+        <a class="card-url" href="https://networks.h-net.org/h-russia" target="_blank">networks.h-net.org/h-russia</a>
+        <p class="card-desc">Most important listserv. Jobs, CFPs, book announcements, scholarly discussions. Daily volume, high signal.</p>
+        <div class="card-tags"><span class="tag tag-listserv">Listserv</span></div>
+      </div>
+      <div class="resource-card featured" data-search="SEELANGS slavic east european literature languages listserv">
+        <div class="card-name">SEELANGS</div>
+        <a class="card-url" href="https://listserv.cuny.edu" target="_blank">listserv.cuny.edu</a>
+        <p class="card-desc">For Slavic & East European Languages and Literatures. Subscribe via listserv.cuny.edu. Literature and culture focus.</p>
+        <div class="card-tags"><span class="tag tag-listserv">Listserv</span></div>
+      </div>
+      <div class="resource-card" data-search="H-Slavic listserv literature culture slavic">
+        <div class="card-name">H-Slavic</div>
+        <a class="card-url" href="https://networks.h-net.org/h-slavic" target="_blank">networks.h-net.org/h-slavic</a>
+        <p class="card-desc">Literature and culture focus within H-Net. Complements H-Russia.</p>
+        <div class="card-tags"><span class="tag tag-listserv">Listserv</span></div>
+      </div>
+      <div class="resource-card" data-search="ASEEES listserv members jobs announcements">
+        <div class="card-name">ASEEES Members Listserv</div>
+        <a class="card-url" href="https://aseees.org" target="_blank">aseees.org</a>
+        <p class="card-desc">Members-only. Requires annual membership (~$50 early career). Covers jobs, events, grants comprehensively.</p>
+        <div class="card-tags"><span class="tag tag-listserv">Listserv</span></div>
+      </div>
+      <div class="resource-card" data-search="Russia Matters harvard belfer center digest policy">
+        <div class="card-name">Russia Matters (Harvard Belfer)</div>
+        <a class="card-url" href="https://russiamatters.org" target="_blank">russiamatters.org</a>
+        <p class="card-desc">Policy and research digest from Harvard's Belfer Center. Good for keeping current without war-focus overload.</p>
+        <div class="card-tags"><span class="tag tag-network">Newsletter</span></div>
+      </div>
+      <div class="resource-card" data-search="Re-Russia analytical digest Russian politics society">
+        <div class="card-name">Re:Russia</div>
+        <a class="card-url" href="https://re-russia.net" target="_blank">re-russia.net</a>
+        <p class="card-desc">Analytical digest on Russian politics and society. Thoughtful, non-sensationalist. Good for background awareness.</p>
+        <div class="card-tags"><span class="tag tag-network">Newsletter</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ NICHE ORGS ═══ -->
+  <section class="section" id="niche">
+    <div class="section-header">
+      <span class="section-icon">🔍</span>
+      <h2 class="section-title">Niche Organizations & NGOs</h2>
+      <span class="section-count">Memory · Culture · Literature · At-Risk Scholars</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">History & Memory-Focused</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="ENRS european network remembrance solidarity memory studies warsaw">
+          <div class="card-name">ENRS (European Network Remembrance & Solidarity)</div>
+          <a class="card-url" href="https://enrs.eu" target="_blank">enrs.eu</a>
+          <p class="card-desc">Warsaw-based. Memory studies, WWII and communist-era history. Funds projects and publishes. Very underknown outside Europe.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card featured" data-search="Imre Kertesz Kolleg Jena fellowship 20th century eastern european history">
+          <div class="card-name">Imre Kertész Kolleg (Jena)</div>
+          <a class="card-url" href="https://imre-kertesz-kolleg.uni-jena.de" target="_blank">imre-kertesz-kolleg.uni-jena.de</a>
+          <p class="card-desc">Fellowship center for 20th century Eastern European history. Excellent, dramatically underknown. One of the hidden gems of the field.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="stiftung aufarbeitung communist history germany east europe">
+          <div class="card-name">Stiftung Aufarbeitung</div>
+          <a class="card-url" href="https://bundesstiftung-aufarbeitung.de" target="_blank">bundesstiftung-aufarbeitung.de</a>
+          <p class="card-desc">German foundation for communist-era history. Funds research, events, publications on the GDR and broader Eastern Bloc.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="Hannah Arendt Institut Dresden totalitarianism east european">
+          <div class="card-name">Hannah Arendt Institut (Dresden)</div>
+          <a class="card-url" href="https://hait.tu-dresden.de" target="_blank">hait.tu-dresden.de</a>
+          <p class="card-desc">Totalitarianism studies; strong Eastern European dimension. Publishes and hosts conferences.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="IPN institute national remembrance Poland WWII communist">
+          <div class="card-name">Institute of National Remembrance (IPN, Poland)</div>
+          <a class="card-url" href="https://ipn.gov.pl" target="_blank">ipn.gov.pl</a>
+          <p class="card-desc">Not just Polish history — runs international research projects on WWII and communist history. Collaborates with scholars across CEE.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="Memorial International Russia human rights historical memory exile">
+          <div class="card-name">Memorial International (in exile)</div>
+          <a class="card-url" href="https://memorialinternational.org" target="_blank">memorialinternational.org</a>
+          <p class="card-desc">Post-2021 ban, the network remains active in exile. Human rights and historical memory focus. The scholars connected to Memorial are key contacts in any Russia-related research.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Literature, Culture & Intellectual Life</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="Pushkin House London russian culture exile events fellowship">
+          <div class="card-name">Pushkin House (London)</div>
+          <a class="card-url" href="https://pushkinhouse.co.uk" target="_blank">pushkinhouse.co.uk</a>
+          <p class="card-desc">Russian culture in exile, essentially. Events, fellowships, residencies. Among the best for Russian literature and cultural studies connections in the UK.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card featured" data-search="IWM Institut Wissenschaften Menschen Vienna fellowship intellectual">
+          <div class="card-name">IWM Vienna</div>
+          <a class="card-url" href="https://iwm.at" target="_blank">iwm.at</a>
+          <p class="card-desc">Institut für die Wissenschaften vom Menschen. One of the best-kept secrets in European intellectual life. Fellowships and residencies for humanities scholars. Essential.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="EUROCLIO european history educators network contested shared history">
+          <div class="card-name">EUROCLIO</div>
+          <a class="card-url" href="https://euroclio.eu" target="_blank">euroclio.eu</a>
+          <p class="card-desc">European history educators network. Projects on contested/shared history in E. Europe. Runs workshops and fellowships.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="Heinrich Böll Stiftung german green foundation eastern europe fellowship">
+          <div class="card-name">Heinrich Böll Stiftung</div>
+          <a class="card-url" href="https://boell.de" target="_blank">boell.de</a>
+          <p class="card-desc">German Green-linked think tank. Strong E. Europe and gender focus. Offers fellowships and has offices across CEE.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="Friedrich Ebert Stiftung social democratic german eastern europe fellowship">
+          <div class="card-name">Friedrich Ebert Stiftung</div>
+          <a class="card-url" href="https://fes.de" target="_blank">fes.de</a>
+          <p class="card-desc">Social-democratic German foundation. Offices across E. Europe. Hires researchers and offers small grants.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="CEC ArtsLink arts exchange eastern europe russia caucasus">
+          <div class="card-name">CEC ArtsLink</div>
+          <a class="card-url" href="https://cecartslink.org" target="_blank">cecartslink.org</a>
+          <p class="card-desc">Supports exchange of artists and cultural managers between the US and Eastern/Central Europe, Russia, Central Asia, and the Caucasus.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="fund central east european book projects translation publishing">
+          <div class="card-name">Fund for CEE Book Projects</div>
+          <a class="card-url" href="https://boekprojecten.nl" target="_blank">boekprojecten.nl</a>
+          <p class="card-desc">Awards grants to publishers for translation of literary and scholarly books in/from CEE languages. If you work in translation or editing, essential.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Scholars at Risk & Emergency Funding</div>
+      <div class="resource-grid">
+        <div class="resource-card" data-search="scholars at risk network fellowship placement threatened academics">
+          <div class="card-name">Scholars at Risk Network</div>
+          <a class="card-url" href="https://scholarsatrisk.org" target="_blank">scholarsatrisk.org</a>
+          <p class="card-desc">Tracks threats to academics. Also has fellowship placements. Relevant for connecting with displaced Eastern European scholars.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span></div>
+        </div>
+        <div class="resource-card" data-search="CARA council at-risk academics UK emergency">
+          <div class="card-name">CARA (UK)</div>
+          <a class="card-url" href="https://cara.ngo" target="_blank">cara.ngo</a>
+          <p class="card-desc">Council for At-Risk Academics. UK-based emergency support and fellowship placements.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span></div>
+        </div>
+        <div class="resource-card" data-search="IIE scholar rescue fund threatened researchers fellowship">
+          <div class="card-name">IIE Scholar Rescue Fund</div>
+          <a class="card-url" href="https://scholarrescuefund.org" target="_blank">scholarrescuefund.org</a>
+          <p class="card-desc">Fellowships for threatened scholars. Good to know for connecting with displaced colleagues in the field.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ HUNGARY ═══ -->
+  <section class="section" id="hungary">
+    <div class="section-header">
+      <span class="section-icon">🇭🇺</span>
+      <h2 class="section-title">Hungary — Deep Dive</h2>
+      <span class="section-count">The most fellowship-rich country for US-based REECA scholars in Europe</span>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-label">Country Note</div>
+      <p>Hungary is currently the <strong>most active</strong> in Europe in terms of funded fellowship programs explicitly accessible to American scholars. MCC, HIIA, and Corvinus CIAS all have live programs. Politically contested context — research accordingly and go in with eyes open.</p>
+    </div>
+
+    <div class="country-block">
+      <div class="country-header">
+        <span class="country-flag">🏛️</span>
+        <span class="country-name">Academic & Research Institutions</span>
+      </div>
+      <div class="country-content">
+        <div class="resource-grid">
+          <div class="resource-card featured" data-search="MCC Mathias Corvinus Collegium Budapest fellowship visiting research">
+            <div class="card-name">Mathias Corvinus Collegium (MCC)</div>
+            <a class="card-url" href="https://mcc.hu/en" target="_blank">mcc.hu/en</a>
+            <p class="card-desc">Largest multidisciplinary education and research institution in Central Europe. Budapest Fellowship Program (10-month, fully funded for American scholars), Visiting Fellowship, and teaching opportunities. 7,800+ students, 24 locations.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-fellowship">Fellowship</span></div>
+          </div>
+          <div class="resource-card featured" data-search="HIIA Hungarian institute international affairs fellowship future leaders">
+            <div class="card-name">HIIA — Hungarian Institute of International Affairs</div>
+            <a class="card-url" href="https://hiia.hu" target="_blank">hiia.hu</a>
+            <p class="card-desc">Foreign policy think tank. Runs the Future Leaders Program (3-month fellowship for early-career IR professionals, Sep–Dec). Posts research positions. Apply at HIIA website.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-fellowship">Fellowship</span><span class="tag tag-think-tank">Think Tank</span></div>
+          </div>
+          <div class="resource-card" data-search="Danube Institute Budapest conservative think tank fellowship">
+            <div class="card-name">Danube Institute</div>
+            <a class="card-url" href="https://danubeinstitute.hu" target="_blank">danubeinstitute.hu</a>
+            <p class="card-desc">Conservative-leaning Budapest think tank. Host institution for Budapest Fellowship Program fellows. Occasionally posts research associate positions.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-think-tank">Think Tank</span></div>
+          </div>
+          <div class="resource-card featured" data-search="Corvinus CIAS Budapest visiting fellowship junior senior researcher">
+            <div class="card-name">Corvinus University — CIAS</div>
+            <a class="card-url" href="https://uni-corvinus.hu" target="_blank">uni-corvinus.hu</a>
+            <p class="card-desc">International research hub of Corvinus University. 5- or 10-month visiting fellowships for Junior and Senior Researchers. Applications open for 2026/2027. Excellent academic environment.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-fellowship">Fellowship</span></div>
+          </div>
+          <div class="resource-card" data-search="IAS CEU Budapest open society fellowship humanities">
+            <div class="card-name">IAS CEU (Budapest Open Society Fellowship)</div>
+            <a class="card-url" href="https://ias.ceu.edu/fellowships-ias-ceu" target="_blank">ias.ceu.edu/fellowships-ias-ceu</a>
+            <p class="card-desc">Institute for Advanced Study at CEU. 2025/26 theme: "Modalities of Resilience and Resistance: Academia and Society in Illiberal Times." Junior fellows €1,500/month, Senior €2,600/month.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-fellowship">Fellowship</span></div>
+          </div>
+          <div class="resource-card" data-search="cold war history research center Budapest Hungary">
+            <div class="card-name">Cold War History Research Center (Budapest)</div>
+            <a class="card-url" href="https://coldwar.hu" target="_blank">coldwar.hu</a>
+            <p class="card-desc">Under the auspices of University of Budapest. Provides organizational framework for Cold War research in Hungary. English-language output.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="country-block">
+      <div class="country-header">
+        <span class="country-flag">🏆</span>
+        <span class="country-name">Fellowships Specific to Hungary</span>
+      </div>
+      <div class="country-content">
+        <div class="resource-grid">
+          <div class="resource-card featured" data-search="Budapest fellowship program Hungary foundation MCC American scholars 10 month">
+            <div class="card-name">Budapest Fellowship Program</div>
+            <a class="card-url" href="https://hungaryfoundation.org/budapest-fellowship-program" target="_blank">hungaryfoundation.org</a>
+            <p class="card-desc">Hungary Foundation + MCC. Fully funded 10-month program for young American scholars/professionals. Research, teaching at MCC, immersion in Hungarian culture. Applications open in spring each year.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-fellowship">Fellowship</span></div>
+          </div>
+          <div class="resource-card" data-search="Hungarian studies association ASEEES history politics cultural">
+            <div class="card-name">Hungarian Studies Association</div>
+            <a class="card-url" href="https://aseees.org/about/affiliate/organizations" target="_blank">aseees.org</a>
+            <p class="card-desc">ASEEES-affiliated. Furthers research in Hungarian history, politics, and cultural affairs. Formed 1970. Good for networking with Hungarian studies scholars.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-network">Network</span></div>
+          </div>
+          <div class="resource-card" data-search="Hungarian historical review journal humanities Budapest">
+            <div class="card-name">Hungarian Historical Review</div>
+            <a class="card-url" href="https://hunghist.hu" target="_blank">hunghist.hu</a>
+            <p class="card-desc">Published by Hungarian Academy of Sciences Research Centre for Humanities. Open access. Good submission target for Central European history work.</p>
+            <div class="card-tags"><span class="tag tag-hungary">Hungary</span><span class="tag tag-journal">Journal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ ITALY ═══ -->
+  <section class="section" id="italy">
+    <div class="section-header">
+      <span class="section-icon">🇮🇹</span>
+      <h2 class="section-title">Italy — Deep Dive</h2>
+      <span class="section-count">Strong philological tradition · Underused by American REECA scholars</span>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-label">Country Note</div>
+      <p>Italy has a genuinely strong and <strong>underused</strong> Slavic studies tradition, especially for Russian literature and philology. The AIS and its Mappa della Slavistica give you instant access to every active Slavic scholar in Italian academia. The EUI in Florence is a gateway to EU-funded postdoctoral work.</p>
+    </div>
+
+    <div class="country-block">
+      <div class="country-header">
+        <span class="country-flag">🏛️</span>
+        <span class="country-name">Primary Organization & Research Network</span>
+      </div>
+      <div class="country-content">
+        <div class="resource-grid">
+          <div class="resource-card featured" data-search="AIS associazione italiana slavisti italy slavic studies mappa">
+            <div class="card-name">AIS — Associazione Italiana degli Slavisti</div>
+            <a class="card-url" href="https://associazioneslavisti.com" target="_blank">associazioneslavisti.com</a>
+            <p class="card-desc">Founded Rome 1971. Promotes Slavic studies in Italy. Publishes Studi Slavistici journal. Their Mappa della Slavistica is a live database of every Slavic studies scholar at Italian universities — essential for networking. National congress every 5 years.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-network">Network</span></div>
+          </div>
+          <div class="resource-card" data-search="studi slavistici journal AIS italy slavic open access">
+            <div class="card-name">Studi Slavistici (Journal)</div>
+            <a class="card-url" href="https://fupress.com/riviste/studi-slavistici/17" target="_blank">fupress.com</a>
+            <p class="card-desc">AIS flagship journal. Scientific articles, bibliographic updates, reviews. Open access. Good submission target for Italian-facing Slavic research.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-journal">Journal</span></div>
+          </div>
+          <div class="resource-card featured" data-search="Europa Orientalis journal salerno russian slavic italy">
+            <div class="card-name">Europa Orientalis (Journal)</div>
+            <a class="card-url" href="https://europaorientalis.it" target="_blank">europaorientalis.it</a>
+            <p class="card-desc">Salerno-based. One of Italy's oldest and most respected Slavic studies publications. The editorial network is itself a community of Italian Russianists and comparativists.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-journal">Journal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="country-block">
+      <div class="country-header">
+        <span class="country-flag">🎓</span>
+        <span class="country-name">Key University Departments</span>
+      </div>
+      <div class="country-content">
+        <div class="resource-grid">
+          <div class="resource-card featured" data-search="L'Orientale Napoli Naples university eastern european slavic russian studies">
+            <div class="card-name">Università di Napoli L'Orientale</div>
+            <a class="card-url" href="https://unior.it" target="_blank">unior.it</a>
+            <p class="card-desc">Historic center. Dipartimento di Studi dell'Europa Orientale — deep roots in Russian and Eastern European studies, including Ottoman and Byzantine dimensions.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-phd">PhD</span></div>
+          </div>
+          <div class="resource-card" data-search="Padova Padua university slavic philology russian literature italy">
+            <div class="card-name">Università di Padova — Slavistica</div>
+            <a class="card-url" href="https://slavistica.unipd.it" target="_blank">slavistica.unipd.it</a>
+            <p class="card-desc">Historic Slavic philology department. The Padova school has deep roots in Russian literature and comparative Slavic studies.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-phd">PhD</span></div>
+          </div>
+          <div class="resource-card" data-search="Bologna university slavic linguistics russian culture italy">
+            <div class="card-name">Università di Bologna</div>
+            <a class="card-url" href="https://unibo.it" target="_blank">unibo.it</a>
+            <p class="card-desc">Strong on comparative Slavic linguistics and Russian cultural studies. Active publication record.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-phd">PhD</span></div>
+          </div>
+          <div class="resource-card" data-search="Milano Milan university slavic studies russian italy">
+            <div class="card-name">Università di Milano (La Statale)</div>
+            <a class="card-url" href="https://unimi.it" target="_blank">unimi.it</a>
+            <p class="card-desc">Large Slavic studies department. Regular academic job postings. One of the biggest in Italy.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-phd">PhD</span></div>
+          </div>
+          <div class="resource-card" data-search="Scuola Normale Superiore Pisa elite research fellowship slavic">
+            <div class="card-name">Scuola Normale Superiore (Pisa)</div>
+            <a class="card-url" href="https://sns.it" target="_blank">sns.it</a>
+            <p class="card-desc">Elite research institution. Occasionally posts fellowships in Slavic philology and comparative literature. Very competitive but prestigious.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-fellowship">Fellowship</span></div>
+          </div>
+          <div class="resource-card featured" data-search="EUI European university institute Florence fellowship postdoc humanities">
+            <div class="card-name">EUI — European University Institute (Florence)</div>
+            <a class="card-url" href="https://eui.eu" target="_blank">eui.eu</a>
+            <p class="card-desc">Schuman Centre postdoctoral fellowships. Not exclusively Slavic but excellent for comparative/transnational humanities work. Generally for EU nationals, but others considered.</p>
+            <div class="card-tags"><span class="tag tag-italy">Italy</span><span class="tag tag-fellowship">Fellowship</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ SLOVAKIA ═══ -->
+  <section class="section" id="slovakia">
+    <div class="section-header">
+      <span class="section-icon">🇸🇰</span>
+      <h2 class="section-title">Slovakia — Deep Dive</h2>
+      <span class="section-count">Punches above its weight for policy & memory studies · Underused by US scholars</span>
+    </div>
+
+    <div class="pro-tip">
+      <div class="pro-tip-label">Country Note</div>
+      <p>Slovakia is <strong>dramatically underused</strong> by US-trained REECA scholars — which means less competition for positions and fellowships. SFPA, GLOBSEC, and ÚPN are high-value entry points. Also the gateway to V4 networks and Visegrad Fund eligibility.</p>
+    </div>
+
+    <div class="resource-grid">
+      <div class="resource-card featured" data-search="SFPA Slovak foreign policy association think tank Bratislava jobs">
+        <div class="card-name">SFPA — Slovak Foreign Policy Association</div>
+        <a class="card-url" href="https://sfpa.sk" target="_blank">sfpa.sk</a>
+        <p class="card-desc">Ranked among the world's top 100 think tanks for defense and national security. Posts research and junior analyst positions. Strong V4 + Russia/Eastern Europe coverage.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-jobs">Jobs</span></div>
+      </div>
+      <div class="resource-card featured" data-search="GLOBSEC policy institute Bratislava fellowship foreign affairs defense">
+        <div class="card-name">GLOBSEC Policy Institute</div>
+        <a class="card-url" href="https://globsec.org" target="_blank">globsec.org</a>
+        <p class="card-desc">Among the best think tanks in CEE for foreign affairs. Annual GLOBSEC Forum is a major event. Research fellowships and analyst roles posted regularly.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-think-tank">Think Tank</span><span class="tag tag-fellowship">Fellowship</span></div>
+      </div>
+      <div class="resource-card featured" data-search="UPN institute national remembrance Slovakia communist history 1939 1989">
+        <div class="card-name">ÚPN — Institute of National Remembrance</div>
+        <a class="card-url" href="https://upn.gov.sk" target="_blank">upn.gov.sk</a>
+        <p class="card-desc">Public archival and scientific research center for Slovakia's period of non-freedom 1939–1989. Runs conferences, research calls, and international projects. Essential for communist-era history.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-ngo">Research Inst.</span></div>
+      </div>
+      <div class="resource-card" data-search="Slovak Academy Sciences SAV research positions Bratislava">
+        <div class="card-name">Slovak Academy of Sciences (SAV)</div>
+        <a class="card-url" href="https://sav.sk" target="_blank">sav.sk</a>
+        <p class="card-desc">Primary publicly funded research organization in Slovakia. Individual institutes for history, literature, and social sciences post research positions and fellowships.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-jobs">Jobs</span></div>
+      </div>
+      <div class="resource-card" data-search="Collegium Carolinum Munich Czech Slovak history Bohemia Czechoslovakia">
+        <div class="card-name">Collegium Carolinum (Munich)</div>
+        <a class="card-url" href="https://collegium-carolinum.de" target="_blank">collegium-carolinum.de</a>
+        <p class="card-desc">Affiliated with LMU Munich. Focuses on history and culture of the Bohemian lands, Slovakia, and Czechoslovakia in European context. Key German hub for Czech/Slovak studies.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-network">Network</span></div>
+      </div>
+      <div class="resource-card" data-search="Slovak Studies Association ASEEES interdisciplinary research Slovak">
+        <div class="card-name">Slovak Studies Association</div>
+        <a class="card-url" href="https://slovakstudies.org" target="_blank">slovakstudies.org</a>
+        <p class="card-desc">ASEEES-affiliated. Promotes interdisciplinary research related to the Slovak experience worldwide. Small but valuable for making contacts in Slovak academic circles.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-network">Network</span></div>
+      </div>
+      <div class="resource-card" data-search="Carpatho Rusyn research center borderlands minority culture">
+        <div class="card-name">Carpatho-Rusyn Research Center</div>
+        <a class="card-url" href="https://carpathorusynresearch.org" target="_blank">carpathorusynresearch.org</a>
+        <p class="card-desc">Very niche. History and culture of Carpatho-Rusyns at the Slovak-Ukrainian borderlands. Useful if your work touches minority cultures of the region.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-network">Network</span></div>
+      </div>
+      <div class="resource-card" data-search="IVO institute public affairs Slovak civil society democracy">
+        <div class="card-name">IVO — Institute for Public Affairs</div>
+        <a class="card-url" href="https://ivo.sk" target="_blank">ivo.sk</a>
+        <p class="card-desc">Slovak civil society and democracy research. Occasionally posts research positions. Good for alt-ac paths.</p>
+        <div class="card-tags"><span class="tag tag-slovakia">Slovakia</span><span class="tag tag-think-tank">Think Tank</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CROSS-REGIONAL ═══ -->
+  <section class="section" id="crossregion">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <h2 class="section-title">Cross-Regional European Resources</h2>
+      <span class="section-count">Multi-country networks · Broader Europe</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Baltic & Nordic (Relevant from Riga)</div>
+      <div class="resource-grid">
+        <div class="resource-card featured" data-search="Latvian Institute of History Riga Latvia research">
+          <div class="card-name">Latvian Institute of History</div>
+          <a class="card-url" href="https://lvi.lu.lv" target="_blank">lvi.lu.lv</a>
+          <p class="card-desc">Baltic focus but broader E. European connections. Literally on your doorstep in Riga — worth walking in the door. Can open Baltic/Nordic funding channels.</p>
+          <div class="card-tags"><span class="tag tag-network">Local</span></div>
+        </div>
+        <div class="resource-card featured" data-search="Latvian Institute Riga cultural diplomacy fellowship">
+          <div class="card-name">Latvian Institute</div>
+          <a class="card-url" href="https://latvianinstitute.lv" target="_blank">latvianinstitute.lv</a>
+          <p class="card-desc">Cultural diplomacy body. Based in Riga. Fellowship programs, publications, and connections to Nordic funding networks.</p>
+          <div class="card-tags"><span class="tag tag-network">Local</span></div>
+        </div>
+        <div class="resource-card" data-search="Aleksanteri Institute Helsinki Finland Russia eastern europe fellowship">
+          <div class="card-name">Aleksanteri Institute (Helsinki)</div>
+          <a class="card-url" href="https://helsinki.fi/aleksanteri" target="_blank">helsinki.fi/aleksanteri</a>
+          <p class="card-desc">One of the best Russian and East European studies institutes in Europe. Hosts the biennial Aleksanteri Conference. Underused by American scholars.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="Baltic Culture Fund Estonia Latvia Lithuania cultural cooperation">
+          <div class="card-name">Baltic Culture Fund</div>
+          <a class="card-url" href="https://balticculture.eu" target="_blank">balticculture.eu</a>
+          <p class="card-desc">Supports cultural cooperation between Baltic countries. Lead partner must bring in partners from all three. Grants awarded annually. Good if your work has a Baltic dimension.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Southeastern Europe</div>
+      <div class="resource-grid">
+        <div class="resource-card" data-search="Centre for Advanced Study Sofia Bulgaria ACLS residency fellowship">
+          <div class="card-name">Centre for Advanced Study Sofia (CAS)</div>
+          <a class="card-url" href="https://cas.bg" target="_blank">cas.bg</a>
+          <p class="card-desc">ACLS partner for SISECSE residency. Independent institution for interdisciplinary humanities research in Bulgaria. Fellowship programs for international scholars.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="ENRS european network remembrance solidarity Warsaw Poland memory">
+          <div class="card-name">ENRS</div>
+          <a class="card-url" href="https://enrs.eu" target="_blank">enrs.eu</a>
+          <p class="card-desc">Warsaw-based. Best network for memory studies spanning all of Central and Eastern Europe.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="Rosa Luxemburg Stiftung southeast europe Belgrade left foundation">
+          <div class="card-name">Rosa Luxemburg Stiftung (SE Europe)</div>
+          <a class="card-url" href="https://rosalux.de" target="_blank">rosalux.de</a>
+          <p class="card-desc">Left-leaning German foundation. Regional office in Belgrade. Funds non-profit organizations across Albania, Bosnia, Bulgaria, Croatia, Kosovo, Macedonia, Montenegro, Romania, Serbia, and Slovenia.</p>
+          <div class="card-tags"><span class="tag tag-ngo">NGO</span></div>
+        </div>
+        <div class="resource-card" data-search="NEC new europe college Bucharest Romania fellowship humanities">
+          <div class="card-name">NEC (New Europe College, Bucharest)</div>
+          <a class="card-url" href="https://nec.ro" target="_blank">nec.ro</a>
+          <p class="card-desc">Individual fellowships and research programs for humanities and social sciences. Strong European network. One of SE Europe's best academic institutions.</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">V4 & Central Europe</div>
+      <div class="resource-grid">
+        <div class="resource-card" data-search="think visegrad V4 network Poland Hungary Czech Slovakia">
+          <div class="card-name">Think Visegrad — V4 Think Tank Platform</div>
+          <a class="card-url" href="https://thinkvisegrad.eu" target="_blank">thinkvisegrad.eu</a>
+          <p class="card-desc">Cross-national network spanning Poland, Hungary, Czech Republic, and Slovakia. Ranked 33rd best think tank network globally. Posts research calls and events.</p>
+          <div class="card-tags"><span class="tag tag-network">Network</span></div>
+        </div>
+        <div class="resource-card" data-search="CEI fellowship literature young writers writers residence central europe">
+          <div class="card-name">CEI Fellowship (Literature)</div>
+          <a class="card-url" href="https://cei.int" target="_blank">cei.int</a>
+          <p class="card-desc">Central European Initiative. 3-month residency for young writers (under 35) from non-EU CEI countries (Albania, Belarus, Bosnia, Macedonia, Moldova, Montenegro, Serbia, Ukraine).</p>
+          <div class="card-tags"><span class="tag tag-fellowship">Fellowship</span></div>
+        </div>
+        <div class="resource-card" data-search="Prague Security Studies Institute PSSI Czech think tank defense">
+          <div class="card-name">PSSI (Prague Security Studies Institute)</div>
+          <a class="card-url" href="https://pssi.cz" target="_blank">pssi.cz</a>
+          <p class="card-desc">Among the world's best 100 think tanks for defense and national security. Regularly posts research and fellowship opportunities.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span></div>
+        </div>
+        <div class="resource-card" data-search="Europeum Prague Czech EU policy research institute">
+          <div class="card-name">Europeum Institute (Prague)</div>
+          <a class="card-url" href="https://europeum.org" target="_blank">europeum.org</a>
+          <p class="card-desc">Specializes in EU affairs and policy-making. Third best think tank in Central/Eastern Europe. Posts analyst roles and research fellowships.</p>
+          <div class="card-tags"><span class="tag tag-think-tank">Think Tank</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK REFERENCE TABLE -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">📋</span>
+      <h2 class="section-title">Quick Reference: High-Priority Monitoring List</h2>
+      <span class="section-count">The essentials to check weekly</span>
+    </div>
+    <table class="quick-table">
+      <thead>
+        <tr>
+          <th>Organization</th>
+          <th>Why Monitor</th>
+          <th>Frequency</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>H-Russia / H-Slavic</td>
+          <td>Jobs, CFPs, announcements — highest signal listserv in the field</td>
+          <td>Daily</td>
+          <td class="mono">h-net.org</td>
+        </tr>
+        <tr>
+          <td>ASEEES Career Center + Listserv</td>
+          <td>Most targeted job board for your exact niche</td>
+          <td>Weekly</td>
+          <td class="mono">aseees.org</td>
+        </tr>
+        <tr>
+          <td>SEELANGS</td>
+          <td>Literature-focused listserv. Subscribe via listserv.cuny.edu</td>
+          <td>Daily</td>
+          <td class="mono">listserv.cuny.edu</td>
+        </tr>
+        <tr>
+          <td>Eurozine Funding Outlook</td>
+          <td>Best aggregator of niche European humanities grants and CFPs</td>
+          <td>Monthly</td>
+          <td class="mono">eurozine.com</td>
+        </tr>
+        <tr>
+          <td>GLOBSEC / SFPA (Slovakia)</td>
+          <td>High-value, low-competition fellowships and analyst roles</td>
+          <td>Monthly</td>
+          <td class="mono">globsec.org / sfpa.sk</td>
+        </tr>
+        <tr>
+          <td>MCC / HIIA / Corvinus (Hungary)</td>
+          <td>Active fellowship programs for American scholars</td>
+          <td>Monthly</td>
+          <td class="mono">mcc.hu / hiia.hu</td>
+        </tr>
+        <tr>
+          <td>IWM Vienna</td>
+          <td>Best-kept secret in European intellectual life for humanists</td>
+          <td>Monthly</td>
+          <td class="mono">iwm.at</td>
+        </tr>
+        <tr>
+          <td>Imre Kertész Kolleg (Jena)</td>
+          <td>Excellent fellowship for 20th century E. European history</td>
+          <td>Monthly</td>
+          <td class="mono">imre-kertesz-kolleg.uni-jena.de</td>
+        </tr>
+        <tr>
+          <td>AISEES</td>
+          <td>$3,000 fellowships for SE Europe research. Undersubscribed.</td>
+          <td>Check January</td>
+          <td class="mono">aisees.org</td>
+        </tr>
+        <tr>
+          <td>Latvian Institute + LVI</td>
+          <td>Literally on your doorstep in Riga. Opens Baltic/Nordic channels.</td>
+          <td>Quarterly</td>
+          <td class="mono">latvianinstitute.lv</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p>REECA & Slavic Studies Resource Directory · Compiled with <span>♦</span> · For personal academic use · Updated 2025</p>
+</footer>
+
+<script>
+function filterCards() {
+  const query = document.getElementById('search').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.resource-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const searchText = (
+      (card.dataset.search || '') + ' ' +
+      (card.querySelector('.card-name')?.textContent || '') + ' ' +
+      (card.querySelector('.card-desc')?.textContent || '')
+    ).toLowerCase();
+
+    if (!query || searchText.includes(query)) {
+      card.classList.remove('hidden');
+      visible++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+
+  const countEl = document.getElementById('search-count');
+  if (query) {
+    countEl.textContent = `${visible} result${visible !== 1 ? 's' : ''} for "${query}"`;
+  } else {
+    countEl.textContent = '';
+  }
+}
+</script>
+
+</body>
+</html>
